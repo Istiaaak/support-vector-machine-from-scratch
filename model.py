@@ -41,8 +41,11 @@ def predict_from_scores(scores):
     # TODO: convert a 1-D array of raw scores into +1 / -1 class predictions.
     return [1 if scores[i]>0 else -1 for i in range(len(scores))]
 
-# Step 5 - hinge_loss_example (not yet solved)
-# TODO: implement
+# Step 5 - hinge_loss_example
+def hinge_loss_example(score, y):
+    # TODO: return the hinge loss for a single example with raw score `score` and label y in {-1, +1}.
+    m = 1 - y * score
+    return max(0, m)
 
 # Step 6 - svm_objective (not yet solved)
 # TODO: implement
