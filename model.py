@@ -47,8 +47,13 @@ def hinge_loss_example(score, y):
     m = 1 - y * score
     return max(0, m)
 
-# Step 6 - svm_objective (not yet solved)
-# TODO: implement
+# Step 6 - svm_objective
+def svm_objective(x, y, params, reg_lambda):
+    # TODO: return mean hinge loss over the dataset plus reg_lambda * (w dot w)
+    score = compute_scores(x, params)
+    w = params['w']
+    loss = np.mean(np.maximum(0, 1 - y*score)) + reg_lambda * (w @ w)
+    return loss
 
 # Step 7 - compute_gradients (not yet solved)
 # TODO: implement
